@@ -27,6 +27,10 @@ app.use('/api/auth', require('./routes/auth') );//todo lo que exporta './routes/
 app.use('/api/events', require('./routes/events') );//todo lo que exporta './routes/events' lo habilita en '/api/events'
 
 
+app.get('*', ( req, res ) => {
+    res.sendFile( __dirname + '/public/index.html' )
+})
+
 
 
 // escuchar peticiones
